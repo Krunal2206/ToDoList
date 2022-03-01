@@ -21,7 +21,6 @@ const App = () => {
     getLists();
   }, [list]);
 
-  // adding a item
   const addItems = () => {
     if (inputList.length === 0) {
       window.alert("Please Add Item.");
