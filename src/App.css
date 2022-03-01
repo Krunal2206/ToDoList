@@ -1,0 +1,60 @@
+.main_div {
+    height: 100vh;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.center_div {
+    padding-top: 20px;
+    width: 90%;
+    height: 75vh;
+    background-color: #f4f4f4;
+    box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+.center_div::-webkit-scrollbar {
+    display: block;
+    border-radius: 15px;
+}
+h1 {
+    color: white;
+    background-color: blueviolet;
+    padding: 5px 0;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.3);
+}
+.add_iteam {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+input {
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    width: 60%;
+    border-bottom: 2px solid blueviolet;
+    outline: none;
+}
+.add {
+    font-size: 32px !important;
+    color: blueviolet;
+}
+.add:hover {
+    color: #20bf6b;
+}
+ol {
+    margin-top: 25px;
+    margin-left: 30px;
+}
+
+@media (min-width: 330px) {
+    .center_div {
+      width: auto;
+    }
+}
