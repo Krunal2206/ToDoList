@@ -47,6 +47,7 @@ input {
 }
 .add:hover {
     color: #20bf6b;
+    cursor: pointer;
 }
 ol {
     margin-top: 25px;

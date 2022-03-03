@@ -18,4 +18,5 @@ li {
 }
 .remove:hover {
     color: crimson;
+    cursor: pointer;
 }
