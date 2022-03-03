@@ -37,8 +37,7 @@ const App = () => {
       <div className="center_div">
         <h1>ToDo List</h1>
         <div className="add_iteam">
-          <input type="text" placeholder="Add a Items" onKeyPress={(e) => {if(e.key === "Enter") {addItems}}} value={inputList} onChange={(e) => { setInputList(e.target.value) }} />
-          <input type="text" placeholder="Add a Items" onKeyPress={(e) => {if(e.key === "Enter") {addItems}}} value={inputList} onChange={(e) => { setInputList(e.target.value) }} />
+          <input type="text" placeholder="Add a Items" onKeyPress={(e) => { if (e.key === "Enter") { addItems } }} value={inputList} onChange={(e) => { setInputList(e.target.value) }} />
           <AddCircleOutlineOutlinedIcon className='add' onClick={addItems} />
         </div>
 
