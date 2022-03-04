@@ -16,6 +16,7 @@ li {
     align-items: center;
     color: blueviolet;
     text-transform: capitalize;
+    text-align: left;
 }
 .remove:hover {
     color: crimson;
