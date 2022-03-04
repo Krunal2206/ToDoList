@@ -7,8 +7,10 @@ import db from './firebase';
 export const ToDoLists = ({ itemList, id }) => {
 
     const removeItem = () => {
-        window.confirm("Are you sure for remove item?");
-        deleteDoc(doc(db, 'list', id));
+        let result = window.confirm("Are you sure for remove item?");
+        if (result) {
+            deleteDoc(doc(db, 'list', id));
+        }
     }
 
     return (
