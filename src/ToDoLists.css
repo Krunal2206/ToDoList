@@ -12,6 +12,7 @@
 li {
     font-size: 20px;
     min-height: 40px;
+    margin-left: 3px;
     display: flex;
     align-items: center;
     color: blueviolet;
