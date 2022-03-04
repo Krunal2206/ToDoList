@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     margin-top: 5px;
-    /* gap: 10px; */
+    gap: 10px;
 }
 .remove {
     color: blueviolet;
@@ -12,7 +12,6 @@
 li {
     font-size: 20px;
     min-height: 40px;
-    margin-left: 3px;
     display: flex;
     align-items: center;
     color: blueviolet;
