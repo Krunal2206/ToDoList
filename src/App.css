@@ -52,6 +52,7 @@ input {
 ol {
     margin-top: 25px;
     margin-left: 30px;
+    margin-right: 10px;
 }
 
 @media (min-width: 330px) {
