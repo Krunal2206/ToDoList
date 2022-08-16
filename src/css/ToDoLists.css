@@ -1,0 +1,11 @@
+.removeBtn {
+  color: blueviolet;
+}
+li {
+  font-size: 20px;
+  min-height: 40px;
+  color: blueviolet;
+}
+.removeBtn:hover {
+  color: crimson;
+}
