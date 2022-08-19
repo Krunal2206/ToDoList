@@ -17,16 +17,12 @@ const ToDoLists = ({ taskList, docId, id, getData }) => {
         }
     }
 
-    const status = () => {
-        setComplete(true)
-    }
-
     return (
         <div className="d-flex align-items-center gap-3">
             <Tooltip title='Remove' placement="bottom" TransitionComponent={Zoom} arrow>
                 <CancelOutlinedIcon className='removeBtn rounded-circle' role="button" onClick={removeItem} />
             </Tooltip>
-            <li className={`d-flex align-items-center text-capitalize ${complete ? 'text-decoration-line-through' : null}`} role="button" onClick={status}>{taskList}</li>
+            <li className={`d-flex align-items-center text-capitalize ${complete ? 'text-decoration-line-through' : null}`} role="button" onClick={() => setComplete(true)}>{taskList}</li>
         </div>
     )
 }

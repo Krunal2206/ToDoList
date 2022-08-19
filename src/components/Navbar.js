@@ -13,16 +13,17 @@ const Navbar = () => {
         setUser(JSON.parse(localStorage.getItem('user')))
     }, []);
 
-    const SignInWithGoogle = (e) => {
+    const SignInWithGoogle = async (e) => {
         e.preventDefault();
-        signInWithPopup(auth, provider)
-            .then(res => {
-                const user = res.user;
-                localStorage.setItem('user', JSON.stringify(user))
-                setUser(JSON.parse(localStorage.getItem('user')))
-            }).catch(e => {
-                console.log(e);
-            })
+        try {
+            const res = await signInWithPopup(auth, provider);
+            const user = res.user;
+            localStorage.setItem('user', JSON.stringify({ uid: user.uid, displayName: user.displayName, photoURL: user.photoURL }))
+            setUser(JSON.parse(localStorage.getItem('user')))
+        } catch (error) {
+            console.error(error);
+            alert(error.message)
+        }
     }
 
     const SignOut = (e) => {
