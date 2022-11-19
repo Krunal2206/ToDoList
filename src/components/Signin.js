@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AuthContext from '../context/authentication/AuthContext';
 
-const Signin = ({ SignInWithGoogle }) => {
+const Signin = () => {
+
+    const { SignInWithGoogle } = useContext(AuthContext);
+
     return (
         <div className='d-flex align-items-center justify-content-center' style={{ minHeight: '95vh', backgroundColor: 'lightgray' }}>
             <div className='d-flex flex-column align-items-center justify-content-evenly' style={{

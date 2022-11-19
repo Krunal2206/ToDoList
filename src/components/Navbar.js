@@ -1,38 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { signInWithPopup, signOut } from 'firebase/auth';
-import { auth, provider } from '../firebase';
+import React, { useContext } from 'react';
 import { Avatar, Zoom, Tooltip } from '@mui/material';
 import Signin from './Signin';
 import ToDo from './ToDo';
+import AuthContext from '../context/authentication/AuthContext';
 
 const Navbar = () => {
 
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        setUser(JSON.parse(localStorage.getItem('user')))
-    }, []);
-
-    const SignInWithGoogle = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await signInWithPopup(auth, provider);
-            const user = res.user;
-            localStorage.setItem('user', JSON.stringify({ uid: user.uid, displayName: user.displayName, photoURL: user.photoURL }))
-            setUser(JSON.parse(localStorage.getItem('user')))
-        } catch (error) {
-            console.error(error);
-            alert(error.message)
-        }
-    }
-
-    const SignOut = (e) => {
-        e.preventDefault();
-        signOut(auth).then(() => {
-            localStorage.removeItem('user')
-            setUser(null)
-        })
-    }
+    const { SignInWithGoogle, SignOut, user } = useContext(AuthContext);
 
     return (
         <>
@@ -61,7 +35,7 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {user ? <ToDo id={user.uid} /> : <Signin SignInWithGoogle={SignInWithGoogle} />}
+            {user ? <ToDo /> : <Signin />}
         </>
     )
 }
